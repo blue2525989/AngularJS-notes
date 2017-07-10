@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<!-- add ng-app to tell angular which part of html to control -->
+<body ng-app>
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+
+	<!-- use ng-model to bind data from html element to ng-model -->
+	<input type="text"
+			ng-model="name"
+			placeholder="Enter your name" />
+			
+	<!-- use ng-bind to reference data bound to ng-model -->
+	<h1>Hello <span ng-bind="name"></span></h1>
+	
+	<script src="/vendor/angular.min.js"></script>
+</body>
+</html>

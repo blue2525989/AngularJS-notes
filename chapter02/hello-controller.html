@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Hello Controller</title>
+</head>
+
+<!-- attach controller to body and use 'as' to give shorter name -->
+<body ng-controller="MainCtrl as ctrl">
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<!-- access controller variables with double {{}} -->
+	{{ctrl.helloMsg}} AngularJS.
+	<br/>
+	{{ctrl.goodbyeMsg}} AngularJS.
+	
+	<script src="/vendor/angular.min.js"></script>
+	
+	<!-- anything needing to be passed to view must be defined with 'this' -->
+	<script src="/chapter02/controller/hello-goodbye-controller.js">
+
+	</script>
+	
+</body>
+</html>
