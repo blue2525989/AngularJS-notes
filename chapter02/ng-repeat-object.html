@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<div ng-repeat="(author, note) in ctrl.notes">
+		<span class="label"> {{note.label}}</span>
+		<span class="author" ng-bind="author"></span>
+	</div>
+	
+	<script src="/vendor/angular.min.js"></script>
+	<script src="/chapter02/controller/controller-repeat-object.js"></script>
+	
+</body>
+</html>

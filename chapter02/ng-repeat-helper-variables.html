@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<!-- assign each note in notes the variable name note for referencing -->
+	<div ng-repeat="note in ctrl.notes">
+		<!-- can reference these variables similar to in 
+		thymeleaf when using idx, idx.index, idx.count to loop through Java List -->
+		<div>First Element: {{$first}}</div>
+		<div>Middle Element: {{$middle}}</div>
+		<div>Last Element: {{$last}}</div>
+		<div>Index of Element: {{$index}}</div>
+		<div>At Even Position: {{$even}}</div>
+		<div>At Odd Position: {{$odd}}</div>
+		
+		<!-- can bind either way but ng-bind waits till after angular bootstraps itself -->
+		<span class="label"> {{note.label}}</span>
+		<span class="author" ng-bind="note.author"></span>
+		<br/><br/>
+	</div>
+	
+	<!-- bootstrapping angular -->
+	<script src="/vendor/angular.min.js"></script>
+	
+	<!-- add controller -->
+	<script src="/chapter02/controller/controller-repeat-helper-variable.js"></script>
+	
+</body>
+</html>

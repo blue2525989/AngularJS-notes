@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<button ng-click="ctrl.changeNotes()">Change Notes</button>
+	<br/>
+	DOM Elements change every time someone clicks
+	<div ng-repeat="note in ctrl.notes1">
+		{{note.$$hashKey}}
+		<span class="label"> {{note.label}}</span>
+		<span class="author" ng-bind="note.done"></span>
+	</div>
+
+	<br/>
+	
+	DOM Elements are changed evertime someone clicks
+	<div ng-repeat="note in ctrl.notes2 track by note.id">
+		{{note.$$hashKey}}
+		<span class="label"> {{note.label}}</span>
+		<span class="author" ng-bind="note.done"></span>
+	</div>
+	
+	<script src="/vendor/angular.min.js"></script>
+	
+	<script src="/chapter02/controller/controller-track-by-id.js"></script>
+	
+</body>
+</html>

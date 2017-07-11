@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<table>
+		<tr ng-repeat-start="note in ctrl.notes">
+			<td><h2>{{note.label}}</h2></td>
+		</tr>
+		<tr ng-repeat-end>
+			<td>Done: {{note.done}}</td>
+		</tr>
+	</table>
+	
+	<script src="/vendor/angular.min.js"></script>
+	
+	<script src="/chapter02/controller/controller-repeat-across-elements.js"></script>
+	
+</body>
+</html>
