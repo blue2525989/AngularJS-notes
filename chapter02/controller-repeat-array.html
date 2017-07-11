@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<!-- use ng-repeat to loop through JSON object array -->
+	<div ng-repeat="note in ctrl.notes">
+		<!-- use dot notation to access JSON fields -->
+		<span class="label"> {{note.label}} <!--  access field through double {{}} --></span>
+		<span class="status" ng-bind="note.done"><!-- access field through ng-bind --></span>
+	</div>
+	
+	<!-- add angular -->
+	<script src="/vendor/angular.min.js"></script>
+	
+	<!-- add controller -->
+	<script src="/chapter02/controller/loop-array-controller.js"></script>
+	
+</body>
+</html>

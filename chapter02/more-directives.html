@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+	
+	<link rel="stylesheet" href="/css/style-01.css" />
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<div ng-repeat="note in ctrl.notes"
+			ng-class="ctrl.getNoteClass(note.done)">
+		<span class="label"> {{note.label}}</span>
+		<span class="asignee"
+				ng-show="note.asignee"
+				ng-bind="note.asignee">
+		</span>				
+	</div>
+	
+	<script src="/vendor/angular.min.js"></script>
+	
+	<script src="/chapter02/controller/more-directives.js"></script>
+
+</body>
+</html>
