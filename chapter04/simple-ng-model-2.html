@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	<!-- stubbed out for example number 2 of chapter 04 -->
+	<input type="text" ng-model="ctrl.username" />
+	<input type="password" ng-model="ctrl.password" />
+	<button ng-click="ctrl.change()">Change Values</button>
+	<button ng-click="ctrl.submit()">Submit</button>
+	
+	<script src="/vendor/angular.min.js"></script>
+	
+	<script src="/chapter04/controller/controller-ng-model-2.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+	<link rel="stylesheet" href="/chapter04/css/form-styling.css" />
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<form ng-submit="ctrl.submit()">
+		<input type="text"
+			class="username"
+			name="uname"
+			ng-model="ctrl.user.username"
+			require="required"
+			ng-minlength="4"/>
+			
+		<input type="submit"
+			value="Submit"
+			ng-disabled="myForm.$invalid" />
+	</form>
+	
+	<script src="/vendor/angular.min.js"></script>
+	
+	<script src="/chapter04/controller/controller-form-styling.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
+	
+	<form ng-submit="ctrl.submit()" name="myForm">
+		<input type="text"
+			name="uname"
+			ng-model="ctrl.user.username"
+			required="required"
+			ng-minlength="4" />
+		<span ng-show="myForm.uname.$error.required">This is a required field</span>
+		<span ng-show="myForm.uname.$error.minLength">Minimum length required is 4</span>
+		<span ng-show="myform.uname.$invalid">This field is invalid</span>
+		
+		<input type="password"
+			name="pwd"
+			ng-model="ctrl.user.password"
+			required="required" />
+		<span ng-show="myForm.pwd.$error.required">This is a required field</span>
+		
+		<input type="submit"
+			value="Submit"
+			ng-disabled="myForm.$invalid" />
+	</form>
+	
+	<script src="/vendor/angular.min.js"></script>
+	
+	<script src="/chapter04/controller/controller-form-error-messages.js"></script>
+	
+</body>
+</html>
