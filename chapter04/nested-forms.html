@@ -1,14 +1,64 @@
 <!DOCTYPE html>
-<html ng-app="notesApp">
+<html ng-app>
 <head>
 	<title>Notes App</title>
 </head>
 
 <body>
+	<nav>
+		<ul>
+			<li><a href="/index.html">Index</a></li>
+		</ul>
+	</nav>
 
-	<!-- stubbed out for chapter 04 nested forms example -->
+	<form novalidate name="myForm">
+		<input type="text"
+			class="username"
+			name="uname"
+			ng-model="ctrl.user.username"
+			required="required"
+			placeholder="Username"
+			ng-minlength="4" />
+			
+		<input type="password"
+			class="password"
+			name="pwd"
+			ng-model="ctrl.user.password"
+			placeholder="Password"
+			required="required" />
+			
+		<ng-form name="profile">
+			<input type="text"
+				name="firstName"
+				ng-model="ctrl.user.profile.firstName"
+				placeholder="First name"
+				required="required" />
+				
+			<input type="text"
+				name="middleName"
+				ng-model="ctrl.user.profile.middleName"
+				placeholder="Middle name"
+				required="required" />
+				
+			<input type="text"
+				name="lastName"
+				ng-model="ctrl.user.profile.lastName"
+				placeholder="Last name"
+				required="required" />
+				
+			<textarea ng-model="ctrl.user.profile.address" 
+				required="required"></textarea>
+		</ng-form>
+		
+		<span ng-show="myForm.profile.$invalid">Please fill out the profile information</span>
+		
+		<input type="submit"
+			value="Submit"
+			ng-disabled="myForm.$invalid" />
+		
+	</form>
 	
-	
+	<script src="/vendor/angular.min.js"></script>
 	
 </body>
 </html>
